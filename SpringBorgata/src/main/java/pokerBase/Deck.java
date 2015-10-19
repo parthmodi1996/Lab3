@@ -36,7 +36,21 @@ public class Deck {
 
 	}
 	
-
+	public Deck(ArrayList<Card> WildCard) {
+		Deck newDeck = new Deck();
+		ArrayList<Card> newCards = newDeck.getCards();
+		for (Card eachCard : newCards) {
+			for (Card eachWild : WildCard) {
+				if (eachCard.getSuit() == eachWild.getSuit()) {
+					if (eachCard.getRank() == eachWild.getRank()) {
+						eachCard.setWild();
+					}
+				}
+			}
+		}
+		cards = newCards;
+		ShuffleCards();
+	}
 	
 	private void ShuffleCards()
 	{
