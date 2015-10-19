@@ -47,7 +47,7 @@ public class Hand_Test {
 		h.EvalHand();
 
 		assertTrue(h.getHandStrength() == eHandStrength.FiveOfAKind.getHandStrength());
-
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 
 	// Joker = 1
@@ -63,7 +63,7 @@ public class Hand_Test {
 		h.EvalHand();
 
 		assertTrue(h.getHandStrength() == eHandStrength.FiveOfAKind.getHandStrength());
-		// Add Number of Jokers
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 1);
 	}
 
 	// Joker = 2
@@ -79,7 +79,7 @@ public class Hand_Test {
 		h.EvalHand();
 
 		assertTrue(h.getHandStrength() == eHandStrength.FiveOfAKind.getHandStrength());
-		// Add number of Jokers
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 2);
 	}
 
 	// Joker = 0
@@ -95,6 +95,7 @@ public class Hand_Test {
 		h.EvalHand();
 
 		assertTrue(h.getHandStrength() == eHandStrength.NaturalRoyalFlush.getHandStrength());
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 
 	// Joker = 1 with Ace
@@ -110,6 +111,7 @@ public class Hand_Test {
 		h.EvalHand();
 
 		assertTrue(h.getHandStrength() == eHandStrength.RoyalFlush.getHandStrength());
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 1);
 	}
 	
 	// Joker = 1 without Ace
@@ -125,6 +127,7 @@ public class Hand_Test {
 		h.EvalHand();
 
 		assertTrue(h.getHandStrength() == eHandStrength.RoyalFlush.getHandStrength());
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 1);
 	}
 	
 	// Joker = 2 with Ace
@@ -140,6 +143,7 @@ public class Hand_Test {
 		h.EvalHand();
 
 		assertTrue(h.getHandStrength() == eHandStrength.RoyalFlush.getHandStrength());
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 2);
 	}
 	
 	// Joker = 2 without Ace
@@ -155,6 +159,7 @@ public class Hand_Test {
 		h.EvalHand();
 
 		assertTrue(h.getHandStrength() == eHandStrength.RoyalFlush.getHandStrength());
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 2);
 	}
 	
 	// Joker == 0
@@ -173,6 +178,8 @@ public class Hand_Test {
 		assertTrue(h.getHighPairStrength() == eRank.KING.getRank());
 		assertTrue(h.getLowPairStrength() == 0);
 		assertTrue(h.getKicker() == null);
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 
 	// Joker = 1
@@ -192,7 +199,7 @@ public class Hand_Test {
 		assertTrue(h.getLowPairStrength() == 0);
 		assertTrue(h.getKicker() == null);
 
-		assertTrue(h.getHandStrength() == eHandStrength.StraightFlush.getHandStrength());
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 1);
 	}
 	
 	// Joker = 2
@@ -211,6 +218,8 @@ public class Hand_Test {
 		assertTrue(h.getHighPairStrength() == eRank.KING.getRank());
 		assertTrue(h.getLowPairStrength() == 0);
 		assertTrue(h.getKicker() == null);
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 2);
 	}
 	
 	//Joker = 0
@@ -226,6 +235,8 @@ public class Hand_Test {
 		h.EvalHand();
 
 		assertTrue(h.getHandStrength() == eHandStrength.Flush.getHandStrength());
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 	//Joker = 1
 	@Test
@@ -240,6 +251,8 @@ public class Hand_Test {
 		h.EvalHand();
 
 		assertTrue(h.getHandStrength() == eHandStrength.Flush.getHandStrength());
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 1);
 	}
 
 	//Joker = 2
@@ -255,6 +268,8 @@ public class Hand_Test {
 		h.EvalHand();
 
 		assertTrue(h.getHandStrength() == eHandStrength.Flush.getHandStrength());
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 2);
 	}
 	
 	// Joker = 0
@@ -273,6 +288,8 @@ public class Hand_Test {
 		assertTrue(h.getHighPairStrength() == eRank.KING.getRank());
 		assertTrue(h.getLowPairStrength() == 0);
 		assertTrue(h.getKicker() == null);
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 	
 	// Joker = 1
@@ -292,6 +309,8 @@ public class Hand_Test {
 		assertTrue(h.getHighPairStrength() == eRank.KING.getRank());
 		assertTrue(h.getLowPairStrength() == 0);
 		assertTrue(h.getKicker() == null);
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 1);
 	}
 	
 	// Joker = 2
@@ -310,6 +329,8 @@ public class Hand_Test {
 			assertTrue(h.getHighPairStrength() == eRank.KING.getRank());
 			assertTrue(h.getLowPairStrength() == 0);
 			assertTrue(h.getKicker() == null);
+			
+			assertTrue("Number of Jokers", h.getNmbrOfJkr() == 2);
 		}
 
 	// Joker = 0
@@ -333,7 +354,8 @@ public class Hand_Test {
 
 		// Check to see if the kicker is a NINE
 		assertTrue(c1.getRank().getRank() == eRank.NINE.getRank());
-
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 	
 	// Joker = 0
@@ -352,6 +374,8 @@ public class Hand_Test {
 		assertTrue(h.getHighPairStrength() == eRank.TEN.getRank());
 		assertTrue(h.getLowPairStrength() == 0);
 		assertTrue(h.getKicker().size() == 1);
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 	
 	// Joker = 1
@@ -375,7 +399,8 @@ public class Hand_Test {
 
 		// Check to see if the kicker is a NINE
 		assertTrue(c1.getRank().getRank() == eRank.NINE.getRank());
-
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 1);
 	}
 	
 	// Joker = 1
@@ -395,6 +420,7 @@ public class Hand_Test {
 		assertTrue(h.getLowPairStrength() == 0);
 		assertTrue(h.getKicker().size() == 1);
 
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 1);
 	}
 	
 	// Joker = 2
@@ -420,6 +446,7 @@ public class Hand_Test {
 		// Check to see if the kicker is a NINE
 		assertTrue(c1.getRank().getRank() == eRank.NINE.getRank());
 
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 2);
 	}
 	
 	// Joker = 2
@@ -444,8 +471,10 @@ public class Hand_Test {
 		// Check to see if the kicker is a NINE
 		assertTrue(c1.getRank().getRank() == eRank.NINE.getRank());
 
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 2);
 	}
 	
+	// Joker = 0
 	@Test
 	public void ThreeOfAKind_1() {
 		Deck d = new Deck();
@@ -461,8 +490,11 @@ public class Hand_Test {
 		assertTrue(h.getHighPairStrength() == eRank.TEN.getRank());
 		assertTrue(h.getLowPairStrength() == 0);
 		assertTrue(h.getKicker().size() == 2);
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 
+	// Joker = 0
 	@Test
 	public void ThreeOfAKind_2() {
 		Deck d = new Deck();
@@ -487,8 +519,11 @@ public class Hand_Test {
 
 		// Check to see if the second kicker is a NINE
 		assertTrue(c2.getRank().getRank() == eRank.NINE.getRank());
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 
+	// Joker = 0
 	@Test
 	public void ThreeOfAKind_3() {
 		Deck d = new Deck();
@@ -513,8 +548,11 @@ public class Hand_Test {
 
 		// Check to see if the second kicker is a TWO
 		assertTrue(c2.getRank().getRank() == eRank.TWO.getRank());
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 
+	// Joker = 0
 	@Test
 	public void FullHouse_1() {
 		Deck d = new Deck();
@@ -530,8 +568,11 @@ public class Hand_Test {
 		assertTrue(h.getHighPairStrength() == eRank.TEN.getRank());
 		assertTrue(h.getLowPairStrength() == eRank.TWO.getRank());
 		assertTrue(h.getKicker() == null);
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 
+	// Joker = 0
 	@Test
 	public void FullHouse_2() {
 		Deck d = new Deck();
@@ -547,8 +588,11 @@ public class Hand_Test {
 		assertTrue(h.getHighPairStrength() == eRank.TWO.getRank());
 		assertTrue(h.getLowPairStrength() == eRank.TEN.getRank());
 		assertTrue(h.getKicker() == null);
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 
+	// Joker = 0
 	@Test
 	public void TwoPair() {
 		Deck d = new Deck();
@@ -569,8 +613,11 @@ public class Hand_Test {
 
 		// Check to see if the first kicker is a THREE
 		assertTrue(c1.getRank().getRank() == eRank.ACE.getRank());
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 
+	// Joker = 0
 	@Test
 	public void Pair() {
 		Deck d = new Deck();
@@ -599,9 +646,12 @@ public class Hand_Test {
 
 		// Check value of kicker
 		assertTrue(c3.getRank().getRank() == eRank.TWO.getRank());
+		
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 
 	}
 
+	// Joker = 0
 	@Test
 	public void HighCard() {
 		Deck d = new Deck();
@@ -635,6 +685,7 @@ public class Hand_Test {
 		// Check value of kicker
 		assertTrue(c4.getRank().getRank() == eRank.TWO.getRank());
 
+		assertTrue("Number of Jokers", h.getNmbrOfJkr() == 0);
 	}
 
 	@Test
@@ -707,6 +758,11 @@ public class Hand_Test {
 		myHands.add(h3);
 		
 		Hand bestHand = Hand.PickBestHand(myHands);
+		
+		assertTrue("Number of Jokers", h1.getNmbrOfJkr() == 0);
+		assertTrue("Number of Jokers", h2.getNmbrOfJkr() == 0);
+		assertTrue("Number of Jokers", h3.getNmbrOfJkr() == 0);
+		
 		assertTrue(bestHand == h2);
 		assertTrue(bestHand.getHandStrength() == eHandStrength.FourOfAKind.getHandStrength());
 	}
@@ -743,6 +799,10 @@ public class Hand_Test {
 		myHands.add(h1);
 		myHands.add(h2);
 		myHands.add(h3);
+		
+		assertTrue("Number of Jokers", h1.getNmbrOfJkr() == 0);
+		assertTrue("Number of Jokers", h2.getNmbrOfJkr() == 0);
+		assertTrue("Number of Jokers", h3.getNmbrOfJkr() == 0);
 		
 		// Raises an exception here
 		Hand bestHand = Hand.PickBestHand(myHands);
@@ -781,10 +841,13 @@ public class Hand_Test {
 		myHands.add(h2);
 		myHands.add(h3);
 
+		assertTrue("Number of Jokers", h1.getNmbrOfJkr() == 1);
+		assertTrue("Number of Jokers", h2.getNmbrOfJkr() == 1);
+		assertTrue("Number of Jokers", h3.getNmbrOfJkr() == 1);
+		
 		Hand bestHand = Hand.PickBestHand(myHands);
 		assertTrue(bestHand == h2);
 		assertTrue(bestHand.getHandStrength() == eHandStrength.FourOfAKind.getHandStrength());
-		
 	}
 	
 	// Joker = 1 with Exception
@@ -819,6 +882,10 @@ public class Hand_Test {
 		myHands.add(h1);
 		myHands.add(h2);
 		myHands.add(h3);
+		
+		assertTrue("Number of Jokers", h1.getNmbrOfJkr() == 1);
+		assertTrue("Number of Jokers", h2.getNmbrOfJkr() == 1);
+		assertTrue("Number of Jokers", h3.getNmbrOfJkr() == 1);
 		
 		//Raises an exception here
 		Hand bestHand = Hand.PickBestHand(myHands);
@@ -857,6 +924,10 @@ public class Hand_Test {
 		myHands.add(h2);
 		myHands.add(h3);
 		
+		assertTrue("Number of Jokers", h1.getNmbrOfJkr() == 2);
+		assertTrue("Number of Jokers", h2.getNmbrOfJkr() == 2);
+		assertTrue("Number of Jokers", h3.getNmbrOfJkr() == 2);
+		
 		Hand bestHand = Hand.PickBestHand(myHands);
 		assertTrue(bestHand == h3);
 		assertTrue(bestHand.getHandStrength() == eHandStrength.StraightFlush.getHandStrength());
@@ -894,6 +965,10 @@ public class Hand_Test {
 		myHands.add(h1);
 		myHands.add(h2);
 		myHands.add(h3);
+		
+		assertTrue("Number of Jokers", h1.getNmbrOfJkr() == 2);
+		assertTrue("Number of Jokers", h2.getNmbrOfJkr() == 2);
+		assertTrue("Number of Jokers", h3.getNmbrOfJkr() == 2);
 		
 		// Raises an exeption here
 		Hand bestHand = Hand.PickBestHand(myHands);
